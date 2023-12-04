@@ -21,6 +21,8 @@
       "@src/*": ["src/*"],
       "@assets/*": ["src/assets/*"],
       "@pages/*": ["src/pages/*"],
+      "@shared/*": ["src/shared/*"],
+      "@popup/*": ["src/pages/popup/*"],
       "virtual:reload-on-update-in-background-script": ["./src/global.d.ts"],
       "virtual:reload-on-update-in-view": ["./src/global.d.ts"]
     }
