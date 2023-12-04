@@ -1,0 +1,52 @@
+@import '@assets/styles/mixins/theme.sass'
+
+.settings
+  padding: 12px
+  &__title
+    font-size: 1.25rem
+    font-weight: 700
+    margin: 0
+    padding: 0
+
+  &__content
+    margin-top: 20px
+    display: flex
+    flex-direction: column
+    gap: 12px
+
+    &__item
+      display: flex
+      flex-direction: column
+      gap: 4px
+
+      &__title
+        font-size: 1rem
+        font-weight: 500
+        margin: 0
+        padding: 0
+        display: flex
+        align-items: center
+        gap: 4px
+
+      &__content
+        font-size: 0.75rem
+        font-weight: 400
+        padding: 4px 0
+        display: flex
+        align-items: center
+        gap: 12px
+
+        & > *:not(:last-of-type)::before
+          content: "/"
+          position: absolute
+          right: -8px
+          font-size: 1rem
+
+        &__button
+          @include buttonTheme()
+          position: relative
+          background-color: transparent
+          border: none
+          box-shadow: none
+          padding: 4px 8px
+          border-radius: 4px

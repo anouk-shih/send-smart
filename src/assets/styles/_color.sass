@@ -1,0 +1,12 @@
+@use "sass:map"
+$primary-colors: (
+  "lighter": #f8f1e9,
+  "light": #e2ddd9,
+  "medium": #a29589,
+  "dark": #716e69,
+  "darker": #171411
+);
+
+:export
+  @each $key, $value in $primary-colors
+    #{unquote($key)}: $value

@@ -1,0 +1,29 @@
+@import '@assets/styles/_color.sass'
+
+  // theme: background-color
+@mixin backgroundTheme
+  background-color: #fff
+  &.dark
+    background-color: map-get($primary-colors, "darker")
+
+  // theme: text
+@mixin contentTheme
+  transition: background-color 0.2s ease-in-out
+  background-color: map-get($primary-colors, "lighter")
+  color: map-get($primary-colors, "darker")
+  &.dark
+    background-color: map-get($primary-colors, "medium")
+    color: map-get($primary-colors, "lighter")
+
+  // theme: button
+@mixin buttonTheme
+  @include contentTheme
+  &:hover
+    background-color: map-get($primary-colors, "light")
+  @if $is-active
+    background-color: rgba(map-get($primary-colors, "medium"), 0.6) !important
+  &.dark
+    &:hover
+      background-color: rgba(map-get($primary-colors, "dark"), 0.7)
+    @if $is-active
+      background-color: map-get($primary-colors, "dark") !important
