@@ -10,6 +10,8 @@ import watchRebuild from './utils/plugins/watch-rebuild';
 const rootDir = resolve(__dirname);
 const srcDir = resolve(rootDir, 'src');
 const pagesDir = resolve(srcDir, 'pages');
+const sharedDir = resolve(srcDir, 'shared');
+const popupDir = resolve(pagesDir, 'popup');
 const assetsDir = resolve(srcDir, 'assets');
 const outDir = resolve(rootDir, 'dist');
 const publicDir = resolve(rootDir, 'public');
@@ -28,6 +30,8 @@ export default defineConfig({
       '@src': srcDir,
       '@assets': assetsDir,
       '@pages': pagesDir,
+      '@shared': sharedDir,
+      '@popup': popupDir,
     },
   },
   plugins: [
@@ -50,15 +54,10 @@ export default defineConfig({
     emptyOutDir: !isDev,
     rollupOptions: {
       input: {
-        devtools: resolve(pagesDir, 'devtools', 'index.html'),
-        panel: resolve(pagesDir, 'panel', 'index.html'),
         content: resolve(pagesDir, 'content', 'index.ts'),
         background: resolve(pagesDir, 'background', 'index.ts'),
-        contentStyle: resolve(pagesDir, 'content', 'style.scss'),
+        // contentStyle: resolve(pagesDir, 'content', 'style.scss'),
         popup: resolve(pagesDir, 'popup', 'index.html'),
-        newtab: resolve(pagesDir, 'newtab', 'index.html'),
-        options: resolve(pagesDir, 'options', 'index.html'),
-        sidepanel: resolve(pagesDir, 'sidepanel', 'index.html'),
       },
       output: {
         entryFileNames: 'src/pages/[name]/index.js',
