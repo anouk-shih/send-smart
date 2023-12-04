@@ -1,0 +1,40 @@
+@import '@assets/styles/mixins/theme.sass'
+
+$header-height: 40px
+
+.template
+  height: 100%
+  width: 100%
+  display: grid
+  grid-template-rows: $header-height 1fr 50px
+  gap: 0
+  @include backgroundTheme()
+
+  &__header
+    padding: 8px
+    padding-left: 16px
+    display: flex
+    justify-content: space-between
+    align-items: center
+    border-bottom-left-radius: 25px
+    border-bottom-right-radius: 25px
+    @include contentTheme()
+
+  &__content
+    width: 100%
+    min-height: 200px
+    padding: 8px
+
+  &__tab-button
+    flex-direction: column
+    align-items: center
+    border: none
+    border-radius: 0
+    border-top-left-radius: 999px
+    border-top-right-radius: 999px
+    display: flex
+    font-size: 14px
+    font-weight: 500
+    padding: 8px 0
+    cursor: pointer
+    @include buttonTheme()
